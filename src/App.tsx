@@ -1,4 +1,5 @@
-import image from './images/item-1.jpeg';
+import menu from './data';
+import MenuItem from './MenuItem';
 
 export default function App() {
   return (
@@ -23,21 +24,9 @@ export default function App() {
           </button>
         </div>
         <div className='section-center'>
-          <article className='menu-item'>
-            <img src={image} alt='buttermilk pancakes' className='img' />
-            <div className='item-info'>
-              <header>
-                <h5>buttermilk pancakes</h5>
-                <span className='item-price'>$15.99</span>
-              </header>
-              <p className='item-text'>
-                I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock
-                freegan copper mug whatever cold-pressed I'm baby woke mlkshk
-                wolf bitters live-edge blue bottle, hammock freegan copper mug
-                whatever cold-pressed{' '}
-              </p>
-            </div>
-          </article>
+          {menu.map(({ id, ...rest }) => (
+            <MenuItem key={id} {...rest} />
+          ))}
         </div>
       </section>
     </main>
