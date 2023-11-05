@@ -3,7 +3,7 @@ import MenuItem from './MenuItem';
 import Button from './Button';
 import { useState } from 'react';
 
-const categories = [...new Set(menu.map(({ category }) => category))];
+const categories = ['all', ...new Set(menu.map(({ category }) => category))];
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
@@ -21,9 +21,12 @@ export default function App() {
           ))}
         </div>
         <div className='section-center'>
-          {menu.map(({ id, ...rest }) => (
-            <MenuItem key={id} {...rest} />
-          ))}
+          {menu.map(
+            ({ id, ...rest }) =>
+              rest.category === selectedCategory && (
+                <MenuItem key={id} {...rest} />
+              )
+          )}
         </div>
       </section>
     </main>
