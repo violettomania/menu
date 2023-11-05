@@ -1,5 +1,6 @@
 import menu from './data';
 import MenuItem from './MenuItem';
+import Button from './Button';
 
 export default function App() {
   return (
@@ -10,18 +11,10 @@ export default function App() {
           <div className='title-underline'></div>
         </div>
         <div className='btn-container'>
-          <button type='button' className='btn'>
-            all
-          </button>
-          <button type='button' className='btn'>
-            breakfast
-          </button>
-          <button type='button' className='btn'>
-            lunch
-          </button>
-          <button type='button' className='btn'>
-            shakes
-          </button>
+          <Button text='all' onClick={() => {}} />
+          <Button text='breakfast' onClick={() => {}} />
+          <Button text='lunch' onClick={() => {}} />
+          <Button text='shakes' onClick={() => {}} />
         </div>
         <div className='section-center'>
           {menu.map(({ id, ...rest }) => (
