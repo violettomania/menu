@@ -1,8 +1,13 @@
 import menu from './data';
 import MenuItem from './MenuItem';
 import Button from './Button';
+import { useState } from 'react';
+
+const categories = [...new Set(menu.map(({ category }) => category))];
 
 export default function App() {
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+
   return (
     <main>
       <section className='menu'>
@@ -11,10 +16,9 @@ export default function App() {
           <div className='title-underline'></div>
         </div>
         <div className='btn-container'>
-          <Button text='all' onClick={() => {}} />
-          <Button text='breakfast' onClick={() => {}} />
-          <Button text='lunch' onClick={() => {}} />
-          <Button text='shakes' onClick={() => {}} />
+          {categories.map((category) => (
+            <Button key={category} text={category} onClick={() => {}} />
+          ))}
         </div>
         <div className='section-center'>
           {menu.map(({ id, ...rest }) => (
