@@ -1,3 +1,5 @@
+import image from './images/item-1.jpeg';
+
 export default function App() {
   return (
     <main>
@@ -22,11 +24,7 @@ export default function App() {
         </div>
         <div className='section-center'>
           <article className='menu-item'>
-            <img
-              src='../images/item-1.jpeg'
-              alt='buttermilk pancakes'
-              className='img'
-            />
+            <img src={image} alt='buttermilk pancakes' className='img' />
             <div className='item-info'>
               <header>
                 <h5>buttermilk pancakes</h5>
