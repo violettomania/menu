@@ -17,13 +17,18 @@ export default function App() {
         </div>
         <div className='btn-container'>
           {categories.map((category) => (
-            <Button key={category} text={category} onClick={() => {}} />
+            <Button
+              key={category}
+              text={category}
+              onClick={() => setSelectedCategory(category)}
+            />
           ))}
         </div>
         <div className='section-center'>
           {menu.map(
             ({ id, ...rest }) =>
-              rest.category === selectedCategory && (
+              (selectedCategory === 'all' ||
+                rest.category === selectedCategory) && (
                 <MenuItem key={id} {...rest} />
               )
           )}
