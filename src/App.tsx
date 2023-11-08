@@ -26,9 +26,8 @@ export default function App() {
         </div>
         <div className='section-center'>
           {menu.map(
-            ({ id, ...rest }) =>
-              (selectedCategory === 'all' ||
-                rest.category === selectedCategory) && (
+            ({ id, category, ...rest }) =>
+              (selectedCategory === 'all' || category === selectedCategory) && (
                 <MenuItem key={id} {...rest} />
               )
           )}

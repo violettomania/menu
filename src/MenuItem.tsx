@@ -1,18 +1,11 @@
 interface MenuItemProps {
   title: string;
-  category: string;
   price: number;
   img: string;
   desc: string;
 }
 
-export default function MenuItem({
-  title,
-  category,
-  price,
-  img,
-  desc,
-}: MenuItemProps) {
+export default function MenuItem({ title, price, img, desc }: MenuItemProps) {
   return (
     <article className='menu-item'>
       <img src={img} alt={title} className='img' />
