@@ -1,4 +1,4 @@
-import menu from './data';
+import menu from '../data';
 import MenuItem from './MenuItem';
 import Button from './Button';
 import { useState } from 'react';
